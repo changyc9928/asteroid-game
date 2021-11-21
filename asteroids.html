@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <style>
+            @import url(style.css);
+            p.highlight {
+                color: red;
+            }
+            svg {
+                background-color: rgb(41, 41, 36);
+            }
+        </style>
+        <script src="svgelement.js"></script>
+        <script src="observable.js"></script>
+        <script src="asteroids.js"></script>
+    </head>
+    <body>
+        <h1>Asteroids</h1>
+        <svg id="canvas" width="600" height="600"/>
+        <p id="ins" style="font-size:200%; color: midnightblue; font-family: fantasy">Level: <span id="level" style="color:midnightblue">1</span></p>
+        <p id="ins" style="font-size:200%; color: navy; font-family: fantasy">Score: <span id="score" style="color:rgb(4, 0, 255)">0</span></p>
+        <p id="ins" style="font-size:300%; color: rgb(16, 107, 4); font-family: fantasy">Life: <span id="life" style="color: chartreuse"><svg id="lifeSVG" width="200" height="50" style="background-color: beige">
+            <polygon id="lifeCounter" points="50,5 35,45 65,45"
+                style="fill:lime;stroke:purple;stroke-width:1" />
+            <polygon id="lifeCounter" points="100,5 85,45 115,45"
+                style="fill:lime;stroke:purple;stroke-width:1" />
+            <polygon id="lifeCounter" points="150,5 135,45 165,45"
+                style="fill:lime;stroke:purple;stroke-width:1" />
+        </svg></span></p>
+        <p id='instruction' style="font-size:150%; color:indigo; font-family: arial">Instrucions: <br>
+            1. Press w and s to move forward and backward.<br>
+            2. Press a and d to pan to left or right.<br>
+            3. Click on your mouse to fire a bullet.<br>
+            4. Moving mouse in the canvas to rotate the ship.<br>
+            5. The asteroids will randomly spawn anywhere within the canvas (even just on the ship, so good luck).<br>
+            6. The asteroids will wrap around in this canvas if they move out of the boundaries.<br>
+            7. The game will start with level 1 and 3 lifes .<br>
+            8. Each succesful shot on SMALL asteroids will contribute 10 marks.<br>
+            9. Large asteroids will break down into 4 and won't contribute any mark when shot.<br>
+            10. The level will increase every 100 scores.<br>
+            11. The level change will influence the asteroid speed, with level 1 the slowest and increasing exponentially with respect to level.<br>
+            12. Collisions between ship and asteroid will cause you to lose one life.<br>
+            13. The game ends when all 3 lifes have been used up.<br>
+            14. It is possible to get "double kill".
+        </p>
+    </body>
+</html>
